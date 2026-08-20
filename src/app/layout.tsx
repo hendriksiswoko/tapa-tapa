@@ -17,7 +17,7 @@ const body = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = "https://www.example.com"; // TODO: replace with production domain
+const siteUrl = "https://hendriksiswoko.github.io/tapa-tapa"; // TODO: replace once a custom domain is set up
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

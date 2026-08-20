@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://www.example.com"; // TODO: replace with production domain
+export const dynamic = "force-static";
+
+const siteUrl = "https://hendriksiswoko.github.io/tapa-tapa"; // TODO: replace once a custom domain is set up
 
 export default function robots(): MetadataRoute.Robots {
   return {

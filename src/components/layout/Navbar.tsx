@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { navHrefs, whatsappHref, company } from "@/data/site";
 import { translations } from "@/data/translations";
 import { useLanguage } from "@/lib/language";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,7 +43,7 @@ export default function Navbar() {
       <nav className="container-page flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <Image
-            src="/images/logo/logo-arang-tapa-tapa.webp"
+            src={withBasePath("/images/logo/logo-arang-tapa-tapa.webp")}
             alt={company.name}
             width={140}
             height={56}

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ImageOff } from "lucide-react";
+import { withBasePath } from "@/lib/basePath";
 
 type ImageCardProps = {
   src?: string | null;
@@ -66,7 +67,7 @@ export default function ImageCard({
     return (
       <div className={`relative overflow-hidden ${rounded} ${className}`}>
         <Image
-          src={src}
+          src={withBasePath(src)}
           alt={alt}
           fill
           sizes={sizes}
@@ -81,7 +82,7 @@ export default function ImageCard({
   return (
     <div className={`relative overflow-hidden ${rounded} ${className}`}>
       <Image
-        src={src}
+        src={withBasePath(src)}
         alt={alt}
         width={width}
         height={height}

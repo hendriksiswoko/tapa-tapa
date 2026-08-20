@@ -8,6 +8,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import { galleryCategories } from "@/data/site";
 import { translations } from "@/data/translations";
 import { useLanguage } from "@/lib/language";
+import { withBasePath } from "@/lib/basePath";
 import type { GalleryImage } from "@/lib/gallery";
 
 export default function Gallery({ images }: { images: GalleryImage[] }) {
@@ -63,7 +64,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
                 >
                   <div className="relative aspect-[4/5] w-full">
                     <Image
-                      src={img.src}
+                      src={withBasePath(img.src)}
                       alt={img.alt[lang]}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
@@ -93,7 +94,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
             <X className="h-5 w-5" />
           </button>
           <div className="relative h-[80vh] w-full max-w-4xl">
-            <Image src={lightbox} alt="Gallery preview" fill className="object-contain" />
+            <Image src={withBasePath(lightbox)} alt="Gallery preview" fill className="object-contain" />
           </div>
         </div>
       )}

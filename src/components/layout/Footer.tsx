@@ -6,6 +6,7 @@ import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { company, navHrefs, products, whatsappHref } from "@/data/site";
 import { translations } from "@/data/translations";
 import { useLanguage } from "@/lib/language";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Footer() {
   const year = 2026;
@@ -17,7 +18,7 @@ export default function Footer() {
       <div className="container-page grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
           <Image
-            src="/images/logo/logo-arang-tapa-tapa.webp"
+            src={withBasePath("/images/logo/logo-arang-tapa-tapa.webp")}
             alt={company.name}
             width={140}
             height={56}
