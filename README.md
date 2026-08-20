@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arang Tapa-Tapa — Company Website
 
-## Getting Started
+Website B2B/export untuk **Arang Tapa-Tapa**, coconut charcoal briquette manufacturer &
+exporter. Dibangun dengan Next.js (App Router) + TypeScript + Tailwind CSS v4 + Lucide React.
 
-First, run the development server:
+## Menjalankan project
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run lint     # eslint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Struktur
 
-## Learn More
+```
+src/
+├── app/                  # layout, page, metadata, sitemap, robots
+├── components/
+│   ├── layout/           # Navbar, Footer
+│   ├── sections/         # Hero, About, Products, Process, Quality, Packaging, Gallery, FAQ, CTA, ...
+│   └── ui/                # Button, SectionHeading, ProductCard, ImageCard, FadeIn, Container
+└── data/
+    └── site.ts            # SEMUA konten (teks, produk, FAQ, stats, gallery) — edit di sini
+public/
+└── images/                # lihat public/images/README.md untuk daftar & panduan naming
+```
 
-To learn more about Next.js, take a look at the following resources:
+Untuk mengganti teks/konten, edit `src/data/site.ts` — komponen tidak perlu disentuh.
+Untuk menambahkan gambar, lihat `public/images/README.md` (daftar file yang masih placeholder).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Data yang masih perlu dilengkapi
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Ditandai `[PLACEHOLDER]` di `src/data/site.ts`. Belum diisi karena belum ada datanya —
+**jangan diisi dengan angka/klaim yang dikarang**:
 
-## Deploy on Vercel
+- Alamat, kota/negara, email, WhatsApp, telepon, jam operasional
+- Kapasitas produksi, MOQ, incoterms, port of loading
+- Statistik (tahun berdiri, jumlah negara, kapasitas ton/bulan) — saat ini ditampilkan sebagai
+  `[XX]+`
+- Spesifikasi produk (ash content, moisture, fixed carbon, burning time, ukuran/bentuk briket)
+- Sertifikasi (belum ditampilkan sama sekali sampai datanya diberikan)
+- Gambar: about/factory, process (8 tahap), quality inspection, packaging/shipment, gallery
+  tambahan, produk BBQ charcoal & custom/private label
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Catatan desain
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Logo (`public/images/logo/logo-arang-tapa-tapa.webp`) memiliki background hitam solid (bukan
+  transparan) dan gaya playful/mascot — ditampilkan apa adanya tanpa kontainer sesuai keputusan
+  saat pembuatan. Jika ingin tampilan lebih premium/corporate, siapkan versi logo dengan
+  background transparan/putih dan style yang lebih formal.
+- Warna: putih dominan, orange (`--accent-orange` di `globals.css`) sebagai accent/CTA, charcoal
+  gelap untuk section gelap (Process, CTA, Footer).
+- Font: Plus Jakarta Sans (heading) + DM Sans (body).
