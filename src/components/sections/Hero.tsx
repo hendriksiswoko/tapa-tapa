@@ -3,7 +3,7 @@
 import { ShieldCheck, Repeat, BadgeCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
 import ImageCard from "@/components/ui/ImageCard";
-import { whatsappHref } from "@/data/site";
+import { company, whatsappHref } from "@/data/site";
 import { translations } from "@/data/translations";
 import { useLanguage } from "@/lib/language";
 
@@ -58,6 +58,11 @@ export default function Hero() {
             priority
             className="aspect-[4/5] w-full shadow-2xl shadow-charcoal-900/10 sm:aspect-[5/4]"
           />
+          <div className="absolute right-4 top-4 rounded-full bg-white/90 px-4 py-2 shadow-lg shadow-charcoal-900/10 backdrop-blur-sm">
+            <p className="font-display text-sm font-bold tracking-tight text-foreground sm:text-base">
+              {company.name}
+            </p>
+          </div>
           <div className="absolute -bottom-6 left-6 hidden rounded-2xl bg-white px-5 py-4 shadow-xl shadow-charcoal-900/10 sm:flex sm:items-center sm:gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-soft">
               <ShieldCheck className="h-5 w-5 text-accent" aria-hidden="true" />
